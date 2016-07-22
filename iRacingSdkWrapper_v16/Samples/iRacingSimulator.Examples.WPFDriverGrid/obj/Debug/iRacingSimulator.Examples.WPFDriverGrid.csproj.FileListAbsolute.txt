@@ -1,0 +1,5 @@
+S:\iRacingSdkWrapper_v16\Samples\iRacingSimulator.Examples.WPFDriverGrid\obj\Debug\iRacingSimulator.Examples.WPFDriverGrid.csprojResolveAssemblyReference.cache
+S:\iRacingSdkWrapper_v16\Samples\iRacingSimulator.Examples.WPFDriverGrid\obj\Debug\MainWindow.g.cs
+S:\iRacingSdkWrapper_v16\Samples\iRacingSimulator.Examples.WPFDriverGrid\obj\Debug\App.g.cs
+S:\iRacingSdkWrapper_v16\Samples\iRacingSimulator.Examples.WPFDriverGrid\obj\Debug\iRacingSimulator.Examples.WPFDriverGrid_MarkupCompile.cache
+S:\iRacingSdkWrapper_v16\Samples\iRacingSimulator.Examples.WPFDriverGrid\obj\Debug\iRacingSimulator.Examples.WPFDriverGrid_MarkupCompile.lref

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+iRacingReplayControl
+</name>
+</assembly>
+<members>
+<member name="T:iRacingReplayControl.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:iRacingReplayControl.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:iRacingReplayControl.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:iRacingReplayControl.Driver">
+ <summary>
+ Represents a driver in the current session.
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.Id">
+ <summary>
+ The identifier (CarIdx) of this driver (unique to this session)
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.Position">
+ <summary>
+ The current position of the driver
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.Name">
+ <summary>
+ The name of the driver
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.CustomerId">
+ <summary>
+ The customer ID (custid) of the driver
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.Number">
+ <summary>
+ The car number of this driver
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.ClassId">
+ <summary>
+ A unique identifier for the car class this driver is using
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.CarPath">
+ <summary>
+ The name of the car of this driver
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.CarClassRelSpeed">
+ <summary>
+ The relative speed of this class in a multiclass session
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.TrackSurface">
+ <summary>
+ Used to determine if a driver is in the pits, off or on track
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.IsInPits">
+ <summary>
+ Whether or not the driver is currently in or approaching the pit stall
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.Lap">
+ <summary>
+ The lap this driver is currently in
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.LapDistance">
+ <summary>
+ The distance along the current lap of this driver (in percentage)
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.RelativeLapDistance">
+ <summary>
+ The relative distance between you and this driver (in percentage).
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.FastestLapTime">
+ <summary>
+ The fastest lap time of this driver
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.LastLapTime">
+ <summary>
+ The last lap time of this driver
+ </summary>
+</member>
+<member name="P:iRacingReplayControl.Driver.Rating">
+ <summary>
+ The iRating of this driver
+ </summary>
+</member>
+</members>
+</doc>

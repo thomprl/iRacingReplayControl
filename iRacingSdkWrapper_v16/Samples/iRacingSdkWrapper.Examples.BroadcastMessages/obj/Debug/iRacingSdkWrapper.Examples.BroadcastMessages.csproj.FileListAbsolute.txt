@@ -1,0 +1,4 @@
+S:\iRacingSdkWrapper_v16\Samples\iRacingSdkWrapper.Examples.BroadcastMessages\obj\Debug\iRacingSdkWrapper.Examples.BroadcastMessages.csprojResolveAssemblyReference.cache
+S:\iRacingSdkWrapper_v16\Samples\iRacingSdkWrapper.Examples.BroadcastMessages\obj\Debug\iRacingSdkWrapper.Examples.BroadcastMessages.Form1.resources
+S:\iRacingSdkWrapper_v16\Samples\iRacingSdkWrapper.Examples.BroadcastMessages\obj\Debug\iRacingSdkWrapper.Examples.BroadcastMessages.Properties.Resources.resources
+S:\iRacingSdkWrapper_v16\Samples\iRacingSdkWrapper.Examples.BroadcastMessages\obj\Debug\iRacingSdkWrapper.Examples.BroadcastMessages.csproj.GenerateResource.Cache

@@ -1,0 +1,4 @@
+S:\iRacingSdkWrapper_v16\Samples\iRacingSimulator.Examples.WinformsDriverGrid\obj\Debug\iRacingSimulator.Examples.WinformsDriverGrid.csprojResolveAssemblyReference.cache
+S:\iRacingSdkWrapper_v16\Samples\iRacingSimulator.Examples.WinformsDriverGrid\obj\Debug\iRacingSimulator.Examples.WinformsDriverGrid.Form1.resources
+S:\iRacingSdkWrapper_v16\Samples\iRacingSimulator.Examples.WinformsDriverGrid\obj\Debug\iRacingSimulator.Examples.WinformsDriverGrid.Properties.Resources.resources
+S:\iRacingSdkWrapper_v16\Samples\iRacingSimulator.Examples.WinformsDriverGrid\obj\Debug\iRacingSimulator.Examples.WinformsDriverGrid.csproj.GenerateResource.Cache

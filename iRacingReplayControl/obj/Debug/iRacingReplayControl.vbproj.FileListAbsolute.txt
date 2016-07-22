@@ -1,0 +1,23 @@
+C:\Users\Ricky\AppData\Local\Temporary Projects\iRacingReplayControl\bin\Debug\iRacingReplayControl.exe.config
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingReplayControl.exe.config
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingReplayControl.exe
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingReplayControl.pdb
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingReplayControl.xml
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingSdkWrapper.dll
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRSDKSharp.dll
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\YamlDotNet.dll
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingSdkWrapper.pdb
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRSDKSharp.pdb
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\YamlDotNet.pdb
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\bin\Debug\YamlDotNet.xml
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.vbprojResolveAssemblyReference.cache
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.Form1.resources
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.Resources.resources
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.vbproj.GenerateResource.Cache
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.exe
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.xml
+e:\My Documents\Visual Studio 2015\Projects\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.pdb
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingReplayControl.exe.config
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.exe
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.xml
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.pdb
