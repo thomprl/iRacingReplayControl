@@ -21,3 +21,15 @@ E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingR
 E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.exe
 E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.xml
 E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.pdb
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingReplayControl.exe
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingReplayControl.pdb
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingReplayControl.xml
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\YamlDotNet.dll
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRacingSdkWrapper.pdb
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRSDKSharp.pdb
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\YamlDotNet.pdb
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\YamlDotNet.xml
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.vbprojResolveAssemblyReference.cache
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.Form1.resources
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.Resources.resources
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.vbproj.GenerateResource.Cache

@@ -2,6 +2,9 @@
 Imports iRSDKSharp
 Imports System.Globalization
 
+''' <summary>
+''' 
+''' </summary>
 Public Class Form1
     Private ReadOnly sdkWrapper As SdkWrapper
     Private ReadOnly iRacingSdk As iRacingSDK
@@ -9,6 +12,9 @@ Public Class Form1
     Private isUpdatingDrivers As Boolean
     Private binding As BindingSource
     Private currentSessionNum As Integer
+    Private playSpeed As Integer
+    Private currentReplayStatus As String
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sdkWrapper.Start()
@@ -269,13 +275,64 @@ Public Class Form1
     Private Sub afterPitStop()
         iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ChatCommand, "-fr$", 0)
     End Sub
-    Private Sub playButton_Click(sender As Object, e As EventArgs) Handles playButton.Click
+
+    'PlaySpeeds.Add(New PlaySpeed { Id = -1, Name = "Normal" });
+    'PlaySpeeds.Add(New PlaySpeed { Id = 1, Name = "1/2x" });
+    'PlaySpeeds.Add(New PlaySpeed { Id = 2, Name = "1/3x" });
+    'PlaySpeeds.Add(New PlaySpeed { Id = 3, Name = "1/4x" });
+    'PlaySpeeds.Add(New PlaySpeed { Id = 4, Name = "1/5x" });
+    'PlaySpeeds.Add(New PlaySpeed { Id = 5, Name = "1/6x" });
+    'PlaySpeeds.Add(New PlaySpeed { Id = 6, Name = "1/7x" });
+    'PlaySpeeds.Add(New PlaySpeed { Id = 7, Name = "1/8x" });
+    'PlaySpeeds.Add(New PlaySpeed { Id = 9, Name = "1/10x" });
+    'PlaySpeeds.Add(New PlaySpeed { Id = 15, Name = "1/16x" });
+
+    'currentReplayStautus = 0 'play
+    'currentReplayStautus = 1 'slomo
+
+    Private Sub playPicture_Click(sender As Object, e As EventArgs) Handles playPicture.Click
         If sdkWrapper.IsConnected Then
-            playButton.Enabled = False
-            iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, 1, 0)
-            playButton.Enabled = True
+            playPicture.Enabled = False
+            currentReplayStatus = 0 'play
+            playSpeed = 1 'normal speed
+            iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, playSpeed, currentReplayStatus)
+            playPicture.Enabled = True
         End If
     End Sub
 
+    Private Sub pausePicture_Click(sender As Object, e As EventArgs) Handles pausePicture.Click
+        If sdkWrapper.IsConnected Then
+            pausePicture.Enabled = False
+            currentReplayStatus = 0 'pause
+            playSpeed = 0 'speed
+            iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, playSpeed, currentReplayStatus)
+            pausePicture.Enabled = True
+        End If
+    End Sub
 
+    Private Sub rewindPicture_Click(sender As Object, e As EventArgs) Handles rewindPicture.Click
+        If sdkWrapper.IsConnected Then
+            rewindPicture.Enabled = False
+            If playSpeed >= 0 Then
+                playSpeed = 0
+            End If
+            playSpeed -= 1 'speed
+            currentReplayStatus = 0  'play
+            iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, playSpeed, currentReplayStatus)
+            rewindPicture.Enabled = True
+        End If
+    End Sub
+
+    Private Sub fastFowardPicture_Click(sender As Object, e As EventArgs) Handles fastFowardPicture.Click
+        If sdkWrapper.IsConnected Then
+            fastFowardPicture.Enabled = False
+            If playSpeed <= 0 Then
+                playSpeed = 0
+            End If
+            playSpeed += 1 'speed
+            currentReplayStatus = 0  'play
+            iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, playSpeed, currentReplayStatus)
+            fastFowardPicture.Enabled = True
+        End If
+    End Sub
 End Class
