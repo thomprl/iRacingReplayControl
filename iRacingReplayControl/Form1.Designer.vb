@@ -29,10 +29,6 @@ Partial Class Form1
         Me.playPicture = New System.Windows.Forms.PictureBox()
         Me.fastFowardPicture = New System.Windows.Forms.PictureBox()
         Me.pausePicture = New System.Windows.Forms.PictureBox()
-        Me.statusText = New System.Windows.Forms.TextBox()
-        Me.speedText = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.slowMoRewindPicture = New System.Windows.Forms.PictureBox()
         Me.slowMoForwardPicture = New System.Windows.Forms.PictureBox()
         Me.endPicture = New System.Windows.Forms.PictureBox()
@@ -106,40 +102,6 @@ Partial Class Form1
         Me.pausePicture.TabIndex = 4
         Me.pausePicture.TabStop = False
         '
-        'statusText
-        '
-        Me.statusText.Location = New System.Drawing.Point(116, 104)
-        Me.statusText.Name = "statusText"
-        Me.statusText.Size = New System.Drawing.Size(100, 20)
-        Me.statusText.TabIndex = 7
-        Me.statusText.Text = "0"
-        '
-        'speedText
-        '
-        Me.speedText.Location = New System.Drawing.Point(292, 104)
-        Me.speedText.Name = "speedText"
-        Me.speedText.Size = New System.Drawing.Size(100, 20)
-        Me.speedText.TabIndex = 8
-        Me.speedText.Text = "0"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(292, 85)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Speed"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(116, 84)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(37, 13)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Status"
-        '
         'slowMoRewindPicture
         '
         Me.slowMoRewindPicture.Image = CType(resources.GetObject("slowMoRewindPicture.Image"), System.Drawing.Image)
@@ -189,10 +151,6 @@ Partial Class Form1
         Me.Controls.Add(Me.endPicture)
         Me.Controls.Add(Me.slowMoForwardPicture)
         Me.Controls.Add(Me.slowMoRewindPicture)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.speedText)
-        Me.Controls.Add(Me.statusText)
         Me.Controls.Add(Me.pausePicture)
         Me.Controls.Add(Me.fastFowardPicture)
         Me.Controls.Add(Me.statusLabel)
@@ -220,10 +178,6 @@ Partial Class Form1
     Friend WithEvents playPicture As PictureBox
     Friend WithEvents fastFowardPicture As PictureBox
     Friend WithEvents pausePicture As PictureBox
-    Friend WithEvents statusText As TextBox
-    Friend WithEvents speedText As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents slowMoRewindPicture As PictureBox
     Friend WithEvents slowMoForwardPicture As PictureBox
     Friend WithEvents endPicture As PictureBox

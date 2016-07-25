@@ -313,10 +313,11 @@ Public Class Form1
     Private Sub rewindPicture_Click(sender As Object, e As EventArgs) Handles rewindPicture.Click
         If sdkWrapper.IsConnected Then
             rewindPicture.Enabled = False
-            If playSpeed >= 0 Then
-                playSpeed = 0
+            If playSpeed <= 0 And currentReplayStatus = 0 Then
+                playSpeed -= 1 'speed
+            Else
+                playSpeed = -1
             End If
-            playSpeed -= 1 'speed
             currentReplayStatus = 0  'play
             iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, playSpeed, currentReplayStatus)
             rewindPicture.Enabled = True
@@ -326,10 +327,11 @@ Public Class Form1
     Private Sub fastFowardPicture_Click(sender As Object, e As EventArgs) Handles fastFowardPicture.Click
         If sdkWrapper.IsConnected Then
             fastFowardPicture.Enabled = False
-            If playSpeed <= 0 Then
-                playSpeed = 0
+            If playSpeed >= 0 And currentReplayStatus = 0 Then
+                playSpeed += 1 'speed
+            Else
+                playSpeed = 1
             End If
-            playSpeed += 1 'speed
             currentReplayStatus = 0  'play
             iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, playSpeed, currentReplayStatus)
             fastFowardPicture.Enabled = True
@@ -337,18 +339,40 @@ Public Class Form1
     End Sub
 
     Private Sub endPicture_Click(sender As Object, e As EventArgs) Handles endPicture.Click
-        iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlayPosition, iRSDKSharp.ReplayPositionModeTypes.End, 0)
+        'iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlayPosition, iRSDKSharp.ReplayPositionModeTypes.End, 0)
+        iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySearch, iRSDKSharp.ReplayPositionModeTypes.Current, 0)
     End Sub
 
     Private Sub beginPicture_Click(sender As Object, e As EventArgs) Handles beginPicture.Click
-        iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlayPosition, iRSDKSharp.ReplayPositionModeTypes.Begin, iRSDKSharp.ReplaySearchModeTypes.ToStart)
+        iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySearch, iRSDKSharp.ReplayPositionModeTypes.Begin, 0)
     End Sub
 
     Private Sub slowMoRewindPicture_Click(sender As Object, e As EventArgs) Handles slowMoRewindPicture.Click
+        If sdkWrapper.IsConnected Then
+            slowMoRewindPicture.Enabled = False
+            If playSpeed <= 0 And currentReplayStatus = 1 Then
+                playSpeed -= 1 'speed
+            Else
+                playSpeed = -1
+            End If
+            currentReplayStatus = 1  'slow-mo
+            iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, playSpeed, currentReplayStatus)
+            slowMoRewindPicture.Enabled = True
+        End If
 
     End Sub
 
     Private Sub slowMoForwardPicture_Click(sender As Object, e As EventArgs) Handles slowMoForwardPicture.Click
-
+        If sdkWrapper.IsConnected Then
+            fastFowardPicture.Enabled = False
+            If playSpeed >= 0 And currentReplayStatus = 1 Then
+                playSpeed += 1 'speed
+            Else
+                playSpeed = 1
+            End If
+            currentReplayStatus = 1  'play
+            iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, playSpeed, currentReplayStatus)
+            fastFowardPicture.Enabled = True
+        End If
     End Sub
 End Class
