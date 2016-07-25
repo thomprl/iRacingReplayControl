@@ -30,6 +30,6 @@ E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\iRSDKSha
 E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\YamlDotNet.pdb
 E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\bin\Debug\YamlDotNet.xml
 E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.vbprojResolveAssemblyReference.cache
-E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.Form1.resources
 E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.Resources.resources
 E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.vbproj.GenerateResource.Cache
+E:\Git\Source\Repos\iRacingReplayControl\iRacingReplayControl\obj\Debug\iRacingReplayControl.ReplayForm.resources

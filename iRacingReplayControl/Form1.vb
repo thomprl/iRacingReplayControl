@@ -5,19 +5,26 @@ Imports System.Globalization
 ''' <summary>
 ''' 
 ''' </summary>
-Public Class Form1
+Public Class ReplayForm
     Private ReadOnly sdkWrapper As SdkWrapper
     Private ReadOnly iRacingSdk As iRacingSDK
     Private drivers As List(Of Driver)
+    Private cameras As List(Of Camera)
     Private isUpdatingDrivers As Boolean
     Private binding As BindingSource
     Private currentSessionNum As Integer
     Private playSpeed As Integer
     Private currentReplayStatus As String
+    Private isCamUpdate As Boolean = False
+
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sdkWrapper.Start()
+        If sdkWrapper.IsRunning Then
+        End If
+        Me.StatusChanged()
+
     End Sub
 
     Public Sub New()
@@ -43,6 +50,7 @@ Public Class Form1
         ' Bind a list of drivers to the grid
         binding = New BindingSource()
         drivers = New List(Of Driver)()
+        cameras = New List(Of Camera)()
         binding.DataSource = drivers
         '        driversGrid.DataSource = binding
 
@@ -60,15 +68,15 @@ Public Class Form1
     Private Sub StatusChanged()
         If sdkWrapper.IsConnected Then
             If sdkWrapper.IsRunning Then
-                statusLabel.Text = "Status: connected!"
+                ToolStripStatusLabel1.Text = "Status: connected!"
             Else
-                statusLabel.Text = "Status: disconnected."
+                ToolStripStatusLabel1.Text = "Status: disconnected."
             End If
         Else
             If sdkWrapper.IsRunning Then
-                statusLabel.Text = "Status: disconnected, waiting for sim..."
+                ToolStripStatusLabel1.Text = "Status: disconnected, waiting for sim..."
             Else
-                statusLabel.Text = "Status: disconnected"
+                ToolStripStatusLabel1.Text = "Status: disconnected"
             End If
         End If
     End Sub
@@ -79,7 +87,7 @@ Public Class Form1
         ' Indicate that we are updating the drivers list
         isUpdatingDrivers = True
         Dim query As YamlQuery = e.SessionInfo("WeekendInfo")
-        statusLabel.Text = query("TrackName").GetValue
+        'statusLabel.Text = query("TrackName").GetValue
 
 
         ' Parse the Drivers section of the session info into a list of drivers
@@ -90,6 +98,8 @@ Public Class Form1
 
         ' Indicate we are finished updating drivers
         isUpdatingDrivers = False
+        Me.ParseCameras(e.SessionInfo)
+
     End Sub
 
     Private Sub wrapper_TelemetryUpdated(sender As Object, e As SdkWrapper.TelemetryUpdatedEventArgs)
@@ -108,10 +118,54 @@ Public Class Form1
         ' There can be multiple sessions in a server (practice, Q, race, or warmup, race, etc).
         currentSessionNum = e.TelemetryInfo.SessionNum.Value
 
-        'Me.UpdateDriversTelemetry(e.TelemetryInfo)
+        Me.UpdateDriversTelemetry(e.TelemetryInfo)
+        If Not isCamUpdate Then
+            Me.UpdateCameraFromTelemetry(e.TelemetryInfo)
+        End If
+
     End Sub
 
 #End Region
+
+#Region "Cameras"
+    Private Sub ParseCameras(sessionInfo As SessionInfo)
+        Dim camera As Camera
+        Dim newCameras As New List(Of Camera)
+        Dim id As Integer = 1
+
+        Do
+            camera = Nothing
+            Dim query As YamlQuery = sessionInfo("CameraInfo")("Groups")("GroupNum", id)
+
+            Dim groupName As String = query("GroupName").GetValue()
+            If groupName IsNot Nothing Then
+                If cameras IsNot Nothing Then
+                    camera = cameras.FirstOrDefault(Function(d) d.GroupName = groupName)
+                End If
+
+                If camera Is Nothing Then
+                    ' Or create a new Driver if we didn't find him before
+                    camera = New Camera()
+                    camera.GroupNum = Integer.Parse(query("GroupNum").GetValue("0")) ' default value 0
+                    camera.GroupName = groupName
+                End If
+                newCameras.Add(camera)
+                ComboBox1.Items.Add(camera.GroupName)
+            End If
+            id += 1
+        Loop While camera IsNot Nothing
+
+        If newCameras IsNot Nothing Then
+            If cameras IsNot Nothing Then
+                cameras.Clear()
+            End If
+            cameras.AddRange(newCameras)
+        End If
+        'Dim cameraIdx = cameras.FindIndex(Function(d) d.GroupName = "TV1")
+        'ComboBox1.SelectedIndex = cameraIdx
+    End Sub
+#End Region
+
 
 #Region "Drivers"
 
@@ -210,6 +264,13 @@ Public Class Form1
             End If
         Loop While driver IsNot Nothing
     End Sub
+    Private Sub UpdateCameraFromTelemetry(info As TelemetryInfo)
+        Dim camGroupNumber = info.CamGroupNumber.Value
+        If cameras.Count > 0 Then
+            ComboBox1.SelectedIndex = cameras.FindIndex(Function(d) d.GroupNum = camGroupNumber)
+            isCamUpdate = True
+        End If
+    End Sub
 
     Private Sub UpdateDriversTelemetry(info As TelemetryInfo)
         ' Get your own driver entry
@@ -260,21 +321,18 @@ Public Class Form1
     End Sub
 
 
-    Private Sub startButton_Click(sender As Object, e As EventArgs) Handles startButton.Click
-        ' If the wrapper is running, stop it. Otherwise, start it.
-        If sdkWrapper.IsRunning Then
-            sdkWrapper.[Stop]()
-            startButton.Text = "Start"
-        Else
-            sdkWrapper.Start()
-            startButton.Text = "Stop"
-        End If
-        Me.StatusChanged()
-    End Sub
+    'Private Sub startButton_Click(sender As Object, e As EventArgs) Handles startButton.Click
+    ' If the wrapper is running, stop it. Otherwise, start it.
+    '        If sdkWrapper.IsRunning Then
+    '       sdkWrapper.[Stop]()
+    '      startButton.Text = "Start"
+    '     Else
+    '    sdkWrapper.Start()
+    '   startButton.Text = "Stop"
+    '  End If
+    ' Me.StatusChanged()
+    'End Sub
 
-    Private Sub afterPitStop()
-        iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ChatCommand, "-fr$", 0)
-    End Sub
 
     'PlaySpeeds.Add(New PlaySpeed { Id = -1, Name = "Normal" });
     'PlaySpeeds.Add(New PlaySpeed { Id = 1, Name = "1/2x" });
@@ -339,7 +397,6 @@ Public Class Form1
     End Sub
 
     Private Sub endPicture_Click(sender As Object, e As EventArgs) Handles endPicture.Click
-        'iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlayPosition, iRSDKSharp.ReplayPositionModeTypes.End, 0)
         iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySearch, iRSDKSharp.ReplayPositionModeTypes.Current, 0)
     End Sub
 
@@ -370,9 +427,13 @@ Public Class Form1
             Else
                 playSpeed = 1
             End If
-            currentReplayStatus = 1  'play
+            currentReplayStatus = 1  'slow-mo
             iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlaySpeed, playSpeed, currentReplayStatus)
             fastFowardPicture.Enabled = True
         End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
     End Sub
 End Class

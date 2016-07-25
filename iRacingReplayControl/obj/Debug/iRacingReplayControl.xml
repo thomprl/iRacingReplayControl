@@ -107,7 +107,7 @@ iRacingReplayControl
  The iRating of this driver
  </summary>
 </member>
-<member name="T:iRacingReplayControl.Form1">
+<member name="T:iRacingReplayControl.ReplayForm">
  <summary>
  
  </summary>

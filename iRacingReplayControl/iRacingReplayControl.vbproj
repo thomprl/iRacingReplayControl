@@ -78,6 +78,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cameras.vb" />
     <Compile Include="Drivers.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
