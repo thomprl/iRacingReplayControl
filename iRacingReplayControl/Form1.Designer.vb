@@ -33,10 +33,18 @@ Partial Class Form1
         Me.speedText = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.slowMoRewindPicture = New System.Windows.Forms.PictureBox()
+        Me.slowMoForwardPicture = New System.Windows.Forms.PictureBox()
+        Me.endPicture = New System.Windows.Forms.PictureBox()
+        Me.beginPicture = New System.Windows.Forms.PictureBox()
         CType(Me.rewindPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.playPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.fastFowardPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pausePicture, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.slowMoRewindPicture, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.slowMoForwardPicture, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.endPicture, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.beginPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'startButton
@@ -132,11 +140,55 @@ Partial Class Form1
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Status"
         '
+        'slowMoRewindPicture
+        '
+        Me.slowMoRewindPicture.Image = CType(resources.GetObject("slowMoRewindPicture.Image"), System.Drawing.Image)
+        Me.slowMoRewindPicture.Location = New System.Drawing.Point(211, 187)
+        Me.slowMoRewindPicture.Name = "slowMoRewindPicture"
+        Me.slowMoRewindPicture.Size = New System.Drawing.Size(64, 52)
+        Me.slowMoRewindPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.slowMoRewindPicture.TabIndex = 11
+        Me.slowMoRewindPicture.TabStop = False
+        '
+        'slowMoForwardPicture
+        '
+        Me.slowMoForwardPicture.Image = CType(resources.GetObject("slowMoForwardPicture.Image"), System.Drawing.Image)
+        Me.slowMoForwardPicture.Location = New System.Drawing.Point(754, 187)
+        Me.slowMoForwardPicture.Name = "slowMoForwardPicture"
+        Me.slowMoForwardPicture.Size = New System.Drawing.Size(65, 52)
+        Me.slowMoForwardPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.slowMoForwardPicture.TabIndex = 12
+        Me.slowMoForwardPicture.TabStop = False
+        '
+        'endPicture
+        '
+        Me.endPicture.Image = CType(resources.GetObject("endPicture.Image"), System.Drawing.Image)
+        Me.endPicture.Location = New System.Drawing.Point(849, 187)
+        Me.endPicture.Name = "endPicture"
+        Me.endPicture.Size = New System.Drawing.Size(63, 52)
+        Me.endPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.endPicture.TabIndex = 13
+        Me.endPicture.TabStop = False
+        '
+        'beginPicture
+        '
+        Me.beginPicture.Image = CType(resources.GetObject("beginPicture.Image"), System.Drawing.Image)
+        Me.beginPicture.Location = New System.Drawing.Point(119, 187)
+        Me.beginPicture.Name = "beginPicture"
+        Me.beginPicture.Size = New System.Drawing.Size(64, 52)
+        Me.beginPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.beginPicture.TabIndex = 14
+        Me.beginPicture.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1155, 415)
+        Me.Controls.Add(Me.beginPicture)
+        Me.Controls.Add(Me.endPicture)
+        Me.Controls.Add(Me.slowMoForwardPicture)
+        Me.Controls.Add(Me.slowMoRewindPicture)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.speedText)
@@ -153,6 +205,10 @@ Partial Class Form1
         CType(Me.playPicture, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.fastFowardPicture, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pausePicture, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.slowMoRewindPicture, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.slowMoForwardPicture, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.endPicture, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.beginPicture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -168,4 +224,8 @@ Partial Class Form1
     Friend WithEvents speedText As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents slowMoRewindPicture As PictureBox
+    Friend WithEvents slowMoForwardPicture As PictureBox
+    Friend WithEvents endPicture As PictureBox
+    Friend WithEvents beginPicture As PictureBox
 End Class

@@ -335,4 +335,20 @@ Public Class Form1
             fastFowardPicture.Enabled = True
         End If
     End Sub
+
+    Private Sub endPicture_Click(sender As Object, e As EventArgs) Handles endPicture.Click
+        iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlayPosition, iRSDKSharp.ReplayPositionModeTypes.End, 0)
+    End Sub
+
+    Private Sub beginPicture_Click(sender As Object, e As EventArgs) Handles beginPicture.Click
+        iRacingSdk.BroadcastMessage(BroadcastMessageTypes.ReplaySetPlayPosition, iRSDKSharp.ReplayPositionModeTypes.Begin, iRSDKSharp.ReplaySearchModeTypes.ToStart)
+    End Sub
+
+    Private Sub slowMoRewindPicture_Click(sender As Object, e As EventArgs) Handles slowMoRewindPicture.Click
+
+    End Sub
+
+    Private Sub slowMoForwardPicture_Click(sender As Object, e As EventArgs) Handles slowMoForwardPicture.Click
+
+    End Sub
 End Class
